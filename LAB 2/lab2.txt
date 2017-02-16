@@ -1,0 +1,60 @@
+//grep
+grep a student.txt
+grep ramya student.txt hostel.txt
+grep "ramya\|shwetha" student.txt
+cat hostel.txt|grep archana
+grep name student.txt
+grep -i name student.txt //case insensitive search
+grep -r 128 oslab //search for file names with occurance of text
+grep -r 123 . // ?
+grep -x 130 student.txt //match whole line
+grep -e a$ student.txt //regular expression
+grep -e [03] student.txt
+grep -v 130 student.txt //print unmatched lines
+
+//sort
+sort student.txt
+sort -o sorted.txt student.txt //write output to another file
+sort -r student.txt //sort in reverse order
+sort -n filename //sort numbers.
+
+//word count
+wc student.txt
+wc -l student.txt
+wc -w student.txt
+wc -c student.txt
+wc * // ?
+
+//cut
+cut -c 1-3 student.txt // character
+cut -c 2,3,5 student.txt 
+cut -c 1-3,6 student.txt
+cut -c 5- student.txt
+cut -f 1 student.txt //extract fields
+ls -l | cut -d "-" -f 2 //delimeter
+
+//sed 
+sed -e 's/124/148/' student.txt
+sed -i -e 's/124/148/g' student.txt
+sed -e 's/\/bin/\/usr\/local\/bin/' student.txt > newfile
+sed -e 's/[0-9]*/(a&)/' student.txt // & pattern matched 
+sed -n 's/124/148/p' student.txt
+ls -l | sed '/^d/p' // ?
+sed -e '/^#/d' student.txt
+
+$ - end of file
+sed -e '1,10 command' filename
+
+
+//tr
+tr '[a-z]' '[A-Z]' < student.txt
+tr 'abcd' 'dcba' < student.txt
+tr -d 'a-z' < student.txt
+tr -cd 'a-z' < student.txt
+tr -d '[:alnum:]' < student.txt
+
+
+tr -s '\n' // supress multiple new line char
+tr -d '\n' // delete new line char
+tr -cd 'a-z' //complement
+
