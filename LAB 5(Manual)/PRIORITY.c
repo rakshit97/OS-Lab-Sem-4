@@ -4,7 +4,7 @@
 
 int queue[100], q_front=0, q_end=0;
 
-void sort_pr(int pr[], char p[][3])
+void sort_pr(int pr[])
 {
 	for(int i=q_front;i<q_end-1;i++)
 		for(int j=q_front;j<q_front+q_end-i-1;j++)
@@ -14,12 +14,6 @@ void sort_pr(int pr[], char p[][3])
 				queue[j] = queue[j+1];
 				queue[j+1] = temp;
 			}
-	for(int i=q_front;i<q_end;i++)
-	{
-		fflush(stdout);
-		printf("%s ", p[queue[i]]);
-		fflush(stdout);
-	}
 }
 
 int main()
@@ -73,7 +67,7 @@ int main()
 			if(at[i]==cpu_timer)
 				queue[q_end++] = i;
 		if(cpu_timer==0)
-			sort_pr(pr, p);
+			sort_pr(pr);
 		
 		if(q_end!=q_front)
 		{
@@ -87,7 +81,7 @@ int main()
 				count_comp++;
 				if(count_comp==n)
 					goto abc;
-				sort_pr(pr, p);
+				sort_pr(pr);
 			}
 			bt_comp[queue[q_front]]++;
 		}
