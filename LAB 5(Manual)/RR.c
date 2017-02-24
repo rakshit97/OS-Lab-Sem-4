@@ -67,10 +67,10 @@ int main()
 			}
 			if(bt_comp[queue[q_front]]==bt[queue[q_front]])
 			{
+				fflush(stdout);
+				printf("%d %s %d\t", ct[queue[q_end-1]], p[queue[q_front]], cpu_timer);
+				fflush(stdout);
 				ct[queue[q_front]] = cpu_timer;
-				fflush(stdout);
-				printf("%d %s %d\t", cpu_timer - bt[queue[q_front]], p[queue[q_front]], ct[queue[q_front]]);
-				fflush(stdout);
 				q_front++;
 				count_comp++;
 				if(count_comp==n)
